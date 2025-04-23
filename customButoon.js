@@ -52,6 +52,7 @@ var Example = window.Example || {};
         }
       })
       .catch(function (error) {
+        Xrm.Utility.closeProgressIndicator();
         console.log(error.message);
       });
   };

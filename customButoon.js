@@ -2,6 +2,7 @@ var Example = window.Example || {};
 (function () {
   this.alertOnLoad = function (primaryControl) {
     console.log("Hello World 2");
+    Xrm.Utility.showProgressIndicator("Loading, please wait...");
     const formContext = primaryControl;
     const entityId = formContext.data.entity.getId();
     const execute_crff8_BoundActionOpportunity_Request = {
@@ -29,6 +30,7 @@ var Example = window.Example || {};
       .then(function (responseBody) {
         const result = responseBody;
         console.log(result);
+        Xrm.Utility.closeProgressIndicator();
         // Return Type: mscrm.crff8_BoundActionOpportunityResponse
         // Output Parameters
         const output = result["output"]; // Edm.String

@@ -39,7 +39,7 @@ var Example = window.Example || {}; // Declare and use namespace for client-side
         // Output Parameters
         const output = result["output"]; // Edm.String
         console.log("js> Output parameter: ", output); // Display the output parameter value
-
+        // Navigate to to the cloned opportunity form based on the the output GUID
         if (output) {
           const entityFormOptions = {
             entityName: "opportunity", // Entity logical name
@@ -47,13 +47,15 @@ var Example = window.Example || {}; // Declare and use namespace for client-side
           };
           Xrm.Navigation.openForm(entityFormOptions)
             .then(function (result) {
-              console.log("Form opened successfully!");
+              console.log(
+                `js> Form for cloned opportunity ${output} opened successfully!`
+              );
             })
             .catch(function (error) {
-              console.log("Error opening form: " + error.message);
+              console.log("js> Error opening form: " + error.message);
             });
         } else {
-          console.log("Invalid GUID in the response.");
+          console.log("js> Invalid GUID in the response.");
         }
       })
       .catch(function (error) {

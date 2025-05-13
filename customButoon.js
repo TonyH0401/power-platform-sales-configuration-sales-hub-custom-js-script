@@ -1,15 +1,15 @@
 var Example = window.Example || {}; // Declare and use namespace for client-side script
 (function () {
   this.alertOnLoad = function (primaryControl) {
-    console.log("js> The client-side script is running!"); // Verify the client-side script is running
-
+    console.log("js> The client-side script is running!"); // Verify the client-side script is running before any other processes
+    // Display the confirm dialog for cloning opportunity process
     Xrm.Navigation.openConfirmDialog({
-      title: "Confirm Clone Opportunity Action",
-      text: "Are you sure you want to execute this action?",
+      title: "Confirm Clone Opportunity Action", // Confirm dialog title
+      text: "Are you sure you want to execute this action?", // Confirm dialog subtitle
     }).then(function (result) {
       if (result.confirmed) {
-        console.log("js> User confirmed to proceed.");
-
+        console.log("js> User confirmed to proceed."); // User confirm to proceed with the process
+        // Initialize the opportunity cloning process
         Xrm.Utility.showProgressIndicator("Loading, please wait..."); // Initialize progress indicator
         const formContext = primaryControl;
         const entityId = formContext.data.entity.getId(); // Get the record GUID
@@ -80,7 +80,7 @@ var Example = window.Example || {}; // Declare and use namespace for client-side
             });
           });
       } else {
-        console.log("js> User cancelled the action.");
+        console.log("js> User cancelled the action."); // User cancel the process
       }
     });
   };

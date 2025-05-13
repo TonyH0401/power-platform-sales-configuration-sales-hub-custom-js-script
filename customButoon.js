@@ -58,7 +58,12 @@ var Example = window.Example || {}; // Declare and use namespace for client-side
       })
       .catch(function (error) {
         Xrm.Utility.closeProgressIndicator(); // Close the progress indicator if it's the failed case for executing plugin and bound custom action
-        console.log(error.message);
+        console.log("js> Bound Custom Action Error: ", error.message); // Display the error message if it's the failed case for executing plugin and bound custom action
+        // Display an error dialog if it's the failed case for executing plugin and bound custom action
+        Xrm.Navigation.openErrorDialog({
+          message: "An error occurred while executing the bound custom action.",
+          details: error.message,
+        });
       });
   };
 }).call(Example);

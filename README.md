@@ -1,24 +1,19 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Introduction
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Power Platform Javascript scripts (Client-side and Ribbon button) for **Sales Configuration** solution - **Sales Hub** Customization application.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Use `Dataverse REST Builder` from the `XrmToolBox` to build the Javascript script that calls the Custom Action. Use `namespace` is the best practice to run the script.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Development Note
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+_Ordered from newest to oldest_
 
-# Note
+## 2025-05-01
 
-Please see the `customButton` JS file inside JS scripting project on Azure for more customization.
+The test version of the ribbon button script has the button on the ribbon of the homepage grid, so I used `selectedControlSelectedItemIds` and `selectedControl`. After receiving further instructions, the button has been moved to the ribbon of the record's main form, so the input arguments have been changed to `primaryControl` only.
+
+Additionally, here are some tools you will also need to download:
+
+- Plugin Registration Tool
+- Early-bound Generator v2
+- FetchXML Tool, I used ChatGPT to generate this.
